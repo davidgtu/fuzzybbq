@@ -65,10 +65,10 @@ class App extends Component {
       <div className="app">
         <div className="app__body container-fluid">
           <div className="menu-row grid">
-            <h1 className="col-xs-12 col-md-3 text-center menu__header">Menu</h1>
-            <div className="col-xs-12 col-md-7 menu-list__container">
+            <h1 className="col-sm-12 col-md-3 text-center menu__header">Menu</h1>
+            <div className="col-sm-12 col-md-7 menu-list__container">
               <ul className="menu__list">
-                {isLoading ? <Spinner /> : items }
+                {isLoading ? <Spinner /> : items}
               </ul>
             </div>
             <SearchBar />
