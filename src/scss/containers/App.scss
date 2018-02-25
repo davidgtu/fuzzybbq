@@ -1,0 +1,40 @@
+.app__body {
+    background: $bgGrey;
+}
+
+.menu-row {
+    display: flex;
+    align-items: center;
+    padding-bottom: 10px;
+    
+    @include media(desktop) {
+        padding-right: 75px;
+    }
+
+    .menu__header {
+        margin-bottom: 0;
+
+        @include media(desktop) {
+            margin-bottom: 35px;
+            padding-bottom: 35px;
+        }
+    }
+
+    .menu-list__container {
+        order: 1;
+
+        @include media(mobile) {
+            padding-left: 35px;
+        }
+
+        @include media(tablet) {
+            padding-left: 35px;
+        }
+
+        @include media(desktop) {
+            order: 0;
+            padding-left: 45px;
+        }
+    }
+}
+

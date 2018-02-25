@@ -1,0 +1,37 @@
+a {
+  color: #000;
+  text-decoration: none;
+
+  &:hover {
+      color: white;
+  }
+}
+
+ul, li {
+  list-style: none; 
+}
+
+.menu__list {
+  padding: 0;
+}
+
+.menu__item {
+  font-size: 8px;
+  text-align: center;
+  padding: 5px 0;
+  float: left;
+  width: 30%;
+
+  @include media(desktop) {
+    font-size: $menuFontSize;
+    text-align: left;
+    margin-left: 15px;
+  }
+
+}
+
+.menu__link {
+  &:hover {
+    color: $softRed;
+  }
+}

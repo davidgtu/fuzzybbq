@@ -1,0 +1,42 @@
+@mixin media($type) {
+  @if $type == desktop {
+    @media only screen and (min-width: 992px) {
+      @content;
+    }
+  } @else if $type == mobile {
+    @media only screen and (max-width: 767px) {
+      @content;
+    }
+  } @else if $type == tablet {
+    @media only screen and (min-width: 768px) and (max-width: 991px) {
+      @content;
+    }
+  } @else if $type == mobile-tablet {
+    @media only screen and (max-width: 991px) {
+      @content;
+    }
+  } @else if $type == tablet-desktop {
+    @media only screen and (min-width: 768px) {
+      @content;
+    }
+  }
+}
+
+@mixin loadingSpinner {
+  .loading__spinner {
+    width: $spinnerSize;
+    height: $spinnerSize;
+    border: 4px solid $softRed;
+    animation: rotate .7s infinite linear;
+    border-top-color: transparent;
+    margin: 0 auto;
+    border-radius: 50%;
+    will-change: transform; // Let GPU handle
+    transform: translateZ(0);
+  }
+  
+  @keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+}
