@@ -5,6 +5,7 @@
  * performing the importing for our local json.
  */
 
+import axios from 'axios';
 import React, { Component } from 'react';
 import MenuItem from '../components/MenuItem';
 import SearchBar from '../components/SearchBar';
@@ -37,31 +38,14 @@ class App extends Component {
   }
 
   loadItems(path) {
-    // this.setState({ isLoading: true });
-
-    const handleOk = response => response.json()
-      .then(menuItems => this.setState({ menuItems, isLoading: false }));
-
-    // Execute fetch request
-    fetch(path)
-      .then((response) => {
-        if (response.status >= 200 && response.status < 300) {
-          // Good response 👍
-          return response;
-        }
-        // Throw error 🙅‍
-        const error = new Error(response.statusText);
-        error.response = response;
-        throw error;
-      }).then(handleOk, err => console.log(err));
+    axios.get(path)
+      .then(response => this.setState({ menuItems: response.data, isLoading: false }))
+      .catch(error => console.log(error));
   }
 
-  /** React */
   render() {
     const { menuItems, isLoading } = this.state;
-    const items = menuItems.map((item, index) => {
-      return <MenuItem id={index} fakeLink={index} items={item} />;
-    });
+    const items = menuItems.map((item, index) => <MenuItem key={item.name} id={index} fakeLink={index} items={item} />);
 
     return (
       <div className="app">
@@ -80,5 +64,15 @@ class App extends Component {
     );
   }
 }
+
+// Proptypes
+App.propTypes = {
+
+};
+
+// Default Props
+App.defaultProps = {
+
+};
 
 export default App;

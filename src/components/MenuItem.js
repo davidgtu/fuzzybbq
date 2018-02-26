@@ -12,17 +12,17 @@ const MenuItem = (props) => {
   // within the page 🍔.
   const { fakeLink, id, items: { name } } = props;
 
-  return (
-    <li id={id} className="menu__item"><a className="menu__link" href={`#${fakeLink}`}>{name}</a></li>
-  );
+  return <li id={id} className="menu__item"><a className="menu__link" href={`#${fakeLink}`}>{name}</a></li>;
 };
 
+// PropTypes
 MenuItem.propTypes = {
   items: PropTypes.objectOf(PropTypes.string),
   fakeLink: PropTypes.number,
   id: PropTypes.number,
 };
 
+// Default Props
 MenuItem.defaultProps = {
   items: [],
   fakeLink: '',
