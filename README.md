@@ -48,7 +48,14 @@ https://fuzzy-bbq.firebaseapp.com
 I was really thinking about including Redux into this mini-application, but considering this was on such a small scale, I decided to leave this out. Had this become a much more complex application where state management becomes a problem, then I'd certainly add that in.
 
 ### Data
-Considering because this challenge didn't provide an API, I decided to make some local JSON files to use as a test. I was well aware I could've simply imported that, I decided to use `axios` since that API might link externally elsewhere. If the data structure in the zipped README is the same as the JSON, then rendering shouldn't be an issue.
+Considering because this challenge didn't provide an API, I decided to make some local JSON files to use as a test. I was well aware I could've simply imported that, but I decided to use `axios` (or `fetch`) since that API might link externally elsewhere. If the data structure in the zipped README is the same as the JSON, then rendering shouldn't be an issue.
+
+If it's an external API link, simply change the argument for: 
+```javascript
+componentDidMount() {
+  this.loadItems('you URL here!')
+}
+```
 
 ### JSDoc
 I like JSDoc a lot. What isn't documented here, is documented in the JavaScript.
