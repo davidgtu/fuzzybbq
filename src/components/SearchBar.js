@@ -11,6 +11,7 @@ import React from 'react';
 const SearchBar = () => (
   <div className="search__container col-sm-12 col-md-2">
     <div className="search-form-wrapper">
+      <label htmlFor="searchForm" hidden>Search the menu</label>
       <input id="searchForm" className="search-form__input" type="text" name="search" placeholder="Search the menu" />
       <svg className="svg-icon search-icon" aria-labelledby="title desc" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7">
         <title id="title">Search Icon</title>

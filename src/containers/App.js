@@ -40,7 +40,7 @@ class App extends Component {
   loadItems(path) {
     axios.get(path)
       .then(response => this.setState({ menuItems: response.data, isLoading: false }))
-      .catch(error => console.log(error));
+      .catch(error => error);
   }
 
   render() {
