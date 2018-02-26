@@ -7,17 +7,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const MenuItem = ({ fakeLink, id, items }) => {
+const MenuItem = ({ fakeLink, id, item }) => {
   // Now if this were a real menu, it'd link to the food items
   // within the page 🍔.
-  const { name } = items;
+  const { name } = item;
 
   return <li id={id} className="menu__item"><a className="menu__link" href={`#${fakeLink}`}>{name}</a></li>;
 };
 
 // PropTypes
 MenuItem.propTypes = {
-  items: PropTypes.objectOf(PropTypes.string).isRequired,
+  item: PropTypes.objectOf(PropTypes.string).isRequired,
   fakeLink: PropTypes.number,
   id: PropTypes.number,
 };

@@ -5,7 +5,6 @@
       </head>
       <body>
         <h1 id="fuzzy-s-bbq-menu-component">Fuzzy&#39;s BBQ Menu Component</h1>
-<p><a href="https://standardjs.com"><img src="https://img.shields.io/badge/code_style-standard-brightgreen.svg" alt="JavaScript Style Guide"></a></p>
 <p>A simple React app that fetches some local JSON data which contains menu items. This was made to look as close to the design as possible and testable with the provided JSON data. This is built to be responsive and supports, Chrome, Firefox, Safari, and even IE11 in mind.</p>
 <h2 id="getting-started">Getting Started</h2>
 <p>Simply <code>git clone</code>, <code>cd</code> to the directory, <code>npm install</code>, <code>npm start</code>.</p>
@@ -33,12 +32,28 @@ const MENU_ITEMS_SMALL_PATH =&#39;/json/menuItems_small.json&#39;;
 }
 </code></pre>
 <h2 id="thoughts-and-approach">Thoughts and Approach</h2>
+<h3 id="live-demo">Live Demo</h3>
+<p>As always, I personally like to host my react projects live.</p>
+<p><a href="https://fuzzy-bbq.firebaseapp.com">https://fuzzy-bbq.firebaseapp.com</a></p>
 <h3 id="redux">Redux</h3>
 <p>I was really thinking about including Redux into this mini-application, but considering this was on such a small scale, I decided to leave this out. Had this become a much more complex application where state management becomes a problem, then I&#39;d certainly add that in.</p>
 <h3 id="data">Data</h3>
 <p>Considering because this challenge didn&#39;t provide an API, I decided to make some local JSON files to use as a test. I was well aware I could&#39;ve simply imported that, I decided to use <code>axios</code> since that API might link externally elsewhere. If the data structure in the zipped README is the same as the JSON, then rendering shouldn&#39;t be an issue.</p>
+<h3 id="jsdoc">JSDoc</h3>
+<p>I like JSDoc a lot. What isn&#39;t documented here, is documented in the JavaScript.</p>
+<h3 id="eslint">ESLint</h3>
+<p>This was ran through ESLint with <a href="https://github.com/airbnb/javascript">Airbnb&#39;s style guide</a></p>
 <h3 id="proptypes-and-default-props">PropTypes and Default Props</h3>
 <p>Though there is only really one component that receives props, I believe it&#39;s good practice to at least document these at the bottom. I see PropTypes as sort of a &quot;guide&quot; or &quot;blueprint&quot; to the component to see what type it expects, and serve warnings when something isn&#39;t expected.</p>
+<h3 id="css-ui-ux">CSS, UI, UX</h3>
+<p>The CSS for this application is done with SCSS and compiled with <code>Prepros</code>. I could&#39;ve totally used <code>Gulp</code> or <code>Grunt</code> to help me compile this, but I chose to keep it simple through using <code>Prepros</code>. That said, the tradeoff would most likely be that if someone where to pick this app up, they&#39;d need to find and set up their own compilier 🙀.</p>
+<p>A grid system is already in use through some CSS classes, which gives it it&#39;s structure from mobile to desktop. Designs were not provided for mobile, but I worked around it as I saw fit by switching the search bar to be under the logo as it personally looked and felt better from a UX standpoint.</p>
+<p>The design was very simple, but I decided to add <em>some</em> flair to it by giving it a color.</p>
+<p>The SVG search icon also animates when the input is clicked on. From an UX standpoint, I usually like placeholder/icon indications still being present when interacting with an input field. Had I implemented a full search functionality, I would debouce the search and return the relevant menu items that match what is entered in the search bar.</p>
+<p>I also added a spinner to indicate that data is being loaded. I don&#39;t like it when data is being loaded into a component and it&#39;s just sitting there being blank-- even if it&#39;s for a few seconds. What if the user has a bad connection and it takes <em>several</em> seconds to load data and there&#39;s no indication that data is still being loaded into the state? They&#39;d sit there staring at a blank app is what 😖.</p>
+<p>Though I use a responsive grid, I&#39;ve included a media query mixin for even more further styling across all device sizes. I believe these mixins make media queries much more manageable and easier to read within the SASS. Overall, these were styled with mobile-first in mind.</p>
+<p>Going off from the design, I&#39;ve identified the primary font to be <code>Arvo</code>, and the accent font to <code>Open-Sans</code> (maybe?). I believe they look similarly close enough. I&#39;ve used Google Fonts to embed into this app. However, the tradeoff is that I&#39;d be dealing with FOUT, or Flash of Unstyled Text.</p>
+<p>Lastly, my SCSS variables are all stored in <code>variables.scss</code>.</p>
 
       </body>
     </html>

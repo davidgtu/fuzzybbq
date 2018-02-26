@@ -6,6 +6,7 @@
  */
 
 import axios from 'axios';
+import shortid from 'shortid'; // Generates unique keys for array
 import React, { Component } from 'react';
 import MenuItem from '../components/MenuItem';
 import SearchBar from '../components/SearchBar';
@@ -25,27 +26,27 @@ class App extends Component {
     this.state = { menuItems: [], isLoading: true };
   }
 
+  componentDidMount() {
+    this.loadItems(MENU_ITEMS_PATH);
+  }
+
   /**
    * Sets the container state of isLoading to true. Then,
    * uses fetch to import the local JSON data and receives
    * menu data. State is then set and sets loading back to false.
    * @param {string} query The path string to receive data.
    */
-
-  /** React */
-  componentDidMount() {
-    this.loadItems(MENU_ITEMS_PATH);
-  }
-
   loadItems(path) {
     axios.get(path)
+    // Response is good 👉😎👉
       .then(response => this.setState({ menuItems: response.data, isLoading: false }))
-      .catch(error => error);
+    // Error is caught 🙅‍
+      .catch(error => console.error(error));
   }
 
   render() {
     const { menuItems, isLoading } = this.state;
-    const items = menuItems.map((item, index) => <MenuItem key={item.name} id={index} fakeLink={index} items={item} />);
+    const items = menuItems.map((item, index) => <MenuItem key={shortid.generate()} id={index} fakeLink={index} item={item} />);
 
     return (
       <div className="app">
