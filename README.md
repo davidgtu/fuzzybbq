@@ -14,6 +14,8 @@ Simply `git clone`, `cd` to the directory, `npm install`, `npm start`.
 
 - [Short Id](https://www.npmjs.com/package/shortid)
 
+- [VS Code](https://github.com/Microsoft/vscode) 
+
 ## Usage
 The main portion of this app is to deliver a responsive, flexible, and data-driven skeleton. The main magic happens in the function, `loadItems(path)`. You'll find three variables on top of `containers/App.js`:
 
