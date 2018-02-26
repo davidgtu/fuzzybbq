@@ -21,7 +21,7 @@
     }
 
     .menu-list__container {
-			order: 1;
+			@extend .order-1; //grid class
 
 			@include media(mobile) {
 				padding-left: 35px;

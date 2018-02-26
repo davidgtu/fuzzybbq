@@ -1,0 +1,44 @@
+<html>
+      <head>
+        <meta charset="UTF-8">
+        <title>README.md</title>
+      </head>
+      <body>
+        <h1 id="fuzzy-s-bbq-menu-component">Fuzzy&#39;s BBQ Menu Component</h1>
+<p><a href="https://standardjs.com"><img src="https://img.shields.io/badge/code_style-standard-brightgreen.svg" alt="JavaScript Style Guide"></a></p>
+<p>A simple React app that fetches some local JSON data which contains menu items. This was made to look as close to the design as possible and testable with the provided JSON data. This is built to be responsive and supports, Chrome, Firefox, Safari, and even IE11 in mind.</p>
+<h2 id="getting-started">Getting Started</h2>
+<p>Simply <code>git clone</code>, <code>cd</code> to the directory, <code>npm install</code>, <code>npm start</code>.</p>
+<h2 id="built-with">Built With</h2>
+<ul>
+<li><p><a href="https://github.com/facebook/create-react-app">Create React App</a></p>
+</li>
+<li><p><a href="https://github.com/Subash/Prepros">Prepros</a></p>
+</li>
+</ul>
+<h2 id="usage">Usage</h2>
+<p>The main portion of this app is to deliver a responsive, flexible, and data-driven skeleton. The main magic happens in the function, <code>loadItems(path)</code>. You&#39;ll find three variables on top of <code>containers/App.js</code>:</p>
+<pre><code class="lang-javascript">const MENU_ITEMS_PATH = &#39;/json/menuItems.json&#39;;
+const MENU_ITEMS_LARGE_PATH = &#39;/json/menuItems_large.json&#39;;
+const MENU_ITEMS_SMALL_PATH =&#39;/json/menuItems_small.json&#39;;
+</code></pre>
+<p>To test each size, look for the function call under <code>componentDidMount()</code> and change the paths like so:</p>
+<pre><code class="lang-javascript">componentDidMount() {
+  this.loadItems(MENU_ITEMS_PATH) //default
+}
+</code></pre>
+<p>to</p>
+<pre><code class="lang-javascript">componentDidMount() {
+  this.loadItems(MENU_ITEMS_LARGE_PATH) 
+}
+</code></pre>
+<h2 id="thoughts-and-approach">Thoughts and Approach</h2>
+<h3 id="redux">Redux</h3>
+<p>I was really thinking about including Redux into this mini-application, but considering this was on such a small scale, I decided to leave this out. Had this become a much more complex application where state management becomes a problem, then I&#39;d certainly add that in.</p>
+<h3 id="data">Data</h3>
+<p>Considering because this challenge didn&#39;t provide an API, I decided to make some local JSON files to use as a test. I was well aware I could&#39;ve simply imported that, I decided to use <code>axios</code> since that API might link externally elsewhere. If the data structure in the zipped README is the same as the JSON, then rendering shouldn&#39;t be an issue.</p>
+<h3 id="proptypes-and-default-props">PropTypes and Default Props</h3>
+<p>Though there is only really one component that receives props, I believe it&#39;s good practice to at least document these at the bottom. I see PropTypes as sort of a &quot;guide&quot; or &quot;blueprint&quot; to the component to see what type it expects, and serve warnings when something isn&#39;t expected.</p>
+
+      </body>
+    </html>
