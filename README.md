@@ -53,7 +53,7 @@ Considering because this challenge didn't provide an API, I decided to make some
 If it's an external API link, simply change the argument for: 
 ```javascript
 componentDidMount() {
-  this.loadItems('you URL here!')
+  this.loadItems('your URL here!')
 }
 ```
 
