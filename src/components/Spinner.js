@@ -6,10 +6,8 @@
 
 import React from 'react';
 
-const Spinner = () => {
-  return (
-    <div className="loading__spinner"></div>
-  );
-}
+const Spinner = () => (
+  <div className="loading__spinner" />
+);
 
 export default Spinner;
